@@ -46,8 +46,20 @@ defmodule AppWeb.Endpoint do
     pass: ["*/*"],
     json_decoder: Phoenix.json_library()
 
+  # [2]эта функ раскажет что лежит в этом 'conn/connection'
+  # def introspect(conn, _opts) do
+  #   IO.puts("""
+  #   Verb: #{inspect(conn.method)}
+  #   Host: #{inspect(conn.host)}
+  #   Headers: #{inspect(conn.req_headers)}
+  #   """)
+
+  #   conn
+  # end
+
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  # plug :introspect #[2]
   plug AppWeb.Router
 end

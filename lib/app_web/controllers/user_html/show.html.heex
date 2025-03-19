@@ -1,0 +1,31 @@
+<div class="max-w-xl mx-auto my-8 p-6 border rounded-lg shadow-sm bg-white">
+    <h1 class="text-3xl font-bold mb-4 text-gray-800">
+        User Details: <%= @user.name %> <%= @user.surname %>
+    </h1>
+
+    <dl class="space-y-4">
+        <div>
+            <dt class="text-sm font-medium text-gray-600">Username:</dt>
+
+            <dd class="text-lg font-semibold text-gray-900"><%= @user.username %></dd>
+        </div>
+
+        <div>
+            <dt class="text-sm font-medium text-gray-600">First Name:</dt>
+
+            <dd class="text-lg font-semibold text-gray-900"><%= @user.name %></dd>
+        </div>
+
+        <div>
+            <dt class="text-sm font-medium text-gray-600">Last Name:</dt>
+
+            <dd class="text-lg font-semibold text-gray-900"><%= @user.surname %></dd>
+        </div>
+
+        <div>
+            <dt class="text-sm font-medium text-gray-600">User ID:</dt>
+
+            <dd class="text-lg font-semibold text-gray-900"><%= @user.id %></dd>
+        </div>
+    </dl>
+</div>

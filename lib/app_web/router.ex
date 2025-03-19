@@ -8,17 +8,22 @@ defmodule AppWeb.Router do
     plug :put_root_layout, html: {AppWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug AppWeb.Plugs.Locale, "en" #[2]
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
+  # localhost:4000/
   scope "/", AppWeb do
     pipe_through :browser
 
-    # get "/about", PageController, :about
-    get "/about/:location", PageController, :about
+    get "/users", UserController, :index #[2]
+    get "/users/:id", UserController, :show #[2]
+
+    # get "/about", PageController, :about #[1]
+    get "/about/:location", PageController, :about #[1]
 
     get "/", PageController, :home
   end

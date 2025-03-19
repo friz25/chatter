@@ -1,0 +1,10 @@
+<h1 class="text-3xl font-bold mb-4">Users</h1>
+
+<ul class="list-disc pl-6">
+    <%= for user <- @users do %>
+        <li>
+            <strong><%= user.name %> <%= user.surname %></strong>
+            (@<.link href={~p"/users/#{user.id}"} class="text-blue-500 hover:underline"><%= user.username %></.link>)
+        </li>
+    <% end %>
+</ul>
